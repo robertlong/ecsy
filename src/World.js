@@ -10,6 +10,10 @@ const DEFAULT_OPTIONS = {
   entityClass: Entity
 };
 
+const DEFAULT_OPTIONS = {
+  entityPoolSize: 0
+};
+
 export class World {
   constructor(options = {}) {
     this.options = Object.assign({}, DEFAULT_OPTIONS, options);
