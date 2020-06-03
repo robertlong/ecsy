@@ -4,17 +4,9 @@ import wrapImmutableComponent from "./WrapImmutableComponent.js";
 // @todo Take this out from there or use ENV
 const DEBUG = false;
 
-<<<<<<< HEAD
 export default class Entity {
   constructor(entityManager) {
     this._entityManager = entityManager || null;
-=======
-var nextId = 0;
-
-export class Entity {
-  constructor(world) {
-    this._world = world || null;
->>>>>>> Export Entity as _Entity and allow parameter to be set in World constructor
 
     // Unique ID for this entity
     this.id = entityManager._nextEntityId++;
