@@ -13,7 +13,7 @@ let benchmarks = new Benchmarks({
 });
 
 //initWorld(benchmarks);
-//initEntities(benchmarks);
+initEntities(benchmarks);
 initPool(benchmarks);
 //initComponents(benchmarks);
 benchmarks.run();
