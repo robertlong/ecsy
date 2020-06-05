@@ -82,7 +82,7 @@ export class Component2 extends Component {
 
   reset() {
     this.attr = 0;
-    this.attr2 = "";
+    this.attr2 = 0;
   }
 }
 Component2.schema = {
