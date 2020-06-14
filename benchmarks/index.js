@@ -12,8 +12,8 @@ let benchmarks = new Benchmarks({
   iterations: 10
 });
 
-initWorld(benchmarks);
-initEntities(benchmarks);
+//initWorld(benchmarks);
+//initEntities(benchmarks);
 initPool(benchmarks);
 //initComponents(benchmarks);
 benchmarks.run();
