@@ -45,7 +45,9 @@ export function init(benchmarks) {
       },
       execute: ctx => {
         for (let i = 0; i < 100000; i++) {
-          ctx.world.entityManager._entities[i].removeComponent(Component3);
+          ctx.world.entityManager._entities[i].removeComponent(
+            Component3
+          );
         }
       }
     })
@@ -60,7 +62,9 @@ export function init(benchmarks) {
       },
       execute: ctx => {
         for (let i = 0; i < 100000; i++) {
-          ctx.world.entityManager._entities[i].removeComponent(Component3);
+          ctx.world.entityManager._entities[i].removeComponent(
+            Component3
+          );
         }
       }
     })
