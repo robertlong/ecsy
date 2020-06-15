@@ -36,18 +36,6 @@ const Vector3Type = createType({
   clone: cloneClonable
 });
 
-class Vector3 {
-  constructor(x = 0, y = 0, z = 0) {
-    this.set(x, y, z);
-  }
-
-  set(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
-}
-
 export class TagComponentA extends TagComponent {}
 export class TagComponentB extends TagComponent {}
 export class TagComponentC extends TagComponent {}
@@ -130,7 +118,7 @@ export class Component3 extends Component {
 Component3.schema = {
   attr: { type: Types.Number },
   attr2: { type: Types.Number },
-  attr3: { type: Types.Array }
+  attr3: { type: Vector3Type }
 };
 /*
 export class Component3NoReset extends Component {
