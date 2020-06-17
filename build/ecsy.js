@@ -1110,13 +1110,13 @@
 	}
 
 	var name = "test-ecsy-build";
-	var version = "0.2.12";
+	var version = "0.2.13";
 	var description = "Entity Component System in JS";
 	var main = "lib/index.js";
 	var module = "src/index.js";
 	var types = "src/index.d.ts";
 	var scripts = {
-		build: "rollup -c && npm run docs && npm run build:cjs",
+		build: "npm run clean && rollup -c && npm run docs && npm run build:cjs",
 		"build:cjs": "rimraf lib && babel src -d lib",
 		docs: "cp README.md site/docs/README.md && rimraf site/docs/api/_sidebar.md; typedoc --readme none --mode file --excludeExternals --plugin typedoc-plugin-markdown  --theme site/docs/theme --hideSources --hideBreadcrumbs --out site/docs/api/ --includeDeclarations --includes 'src/**/*.d.ts' src; touch site/docs/api/_sidebar.md",
 		"dev:docs": "nodemon -e ts -x 'npm run docs' -w src",
@@ -1125,6 +1125,7 @@
 		lint: "eslint src test examples",
 		start: "npm run dev",
 		deploy: "np",
+		clean: "rimraf lib build site/build site/docs/README.md site/docs/api site/benchmarks.module.js",
 		prepublishOnly: "npm run build",
 		postdeploy: "npm run gh-pages",
 		"gh-pages": "gh-pages --dist=./site --dotfiles=true",
