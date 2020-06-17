@@ -3,6 +3,7 @@ window.$docsify = {
   loadSidebar: true,
   auto2top: true,
   homepage: "./README.md",
+  basePath: "/docs/",
   relativePath: true,
   search: {
     paths: "auto",
