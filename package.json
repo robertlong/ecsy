@@ -17,7 +17,7 @@
     "deploy": "np",
     "prepublishOnly": "npm run build",
     "postdeploy": "npm run gh-pages",
-    "gh-pages": "gh-pages -d site",
+    "gh-pages": "gh-pages --dist=./site --dotfiles=true",
     "benchmarks": "node -r esm --expose-gc benchmarks/index.js",
     "test": "ava",
     "travis": "npm run lint && npm run test && npm run build",
