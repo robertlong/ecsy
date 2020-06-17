@@ -1116,16 +1116,17 @@
 	var module = "src/index.js";
 	var types = "src/index.d.ts";
 	var scripts = {
-		build: "rollup -c && npm run docs && npm run build:cjs && rimraf site/build && cp -r build site/build",
+		build: "rollup -c && npm run docs && npm run build:cjs",
 		"build:cjs": "rimraf lib && babel src -d lib",
-		docs: "rimraf site/docs/api/_sidebar.md; typedoc --readme none --mode file --excludeExternals --plugin typedoc-plugin-markdown  --theme site/docs/theme --hideSources --hideBreadcrumbs --out site/docs/api/ --includeDeclarations --includes 'src/**/*.d.ts' src; touch site/docs/api/_sidebar.md",
+		docs: "cp README.md site/docs/README.md && rimraf site/docs/api/_sidebar.md; typedoc --readme none --mode file --excludeExternals --plugin typedoc-plugin-markdown  --theme site/docs/theme --hideSources --hideBreadcrumbs --out site/docs/api/ --includeDeclarations --includes 'src/**/*.d.ts' src; touch site/docs/api/_sidebar.md",
 		"dev:docs": "nodemon -e ts -x 'npm run docs' -w src",
 		dev: "concurrently --names 'ROLLUP,DOCS,HTTP' -c 'bgBlue.bold,bgYellow.bold,bgGreen.bold' 'rollup -c -w -m inline' 'npm run dev:docs' 'npm run dev:server'",
 		"dev:server": "http-server -c-1 -p 8080 --cors ./site",
 		lint: "eslint src test examples",
 		start: "npm run dev",
 		deploy: "np",
-		postdeploy: "gh-pages -d site",
+		postdeploy: "npm run gh-pages",
+		"gh-pages": "gh-pages -d site",
 		benchmarks: "node -r esm --expose-gc benchmarks/index.js",
 		test: "ava",
 		travis: "npm run lint && npm run test && npm run build",
@@ -1179,7 +1180,6 @@
 		prettier: "^1.19.1",
 		rimraf: "^3.0.2",
 		rollup: "^1.29.0",
-		"rollup-plugin-copy": "^3.3.0",
 		"rollup-plugin-json": "^4.0.0",
 		"rollup-plugin-sourcemaps": "^0.6.2",
 		"rollup-plugin-terser": "^5.2.0",
