@@ -1110,7 +1110,7 @@
 	}
 
 	var name = "test-ecsy-build";
-	var version = "0.2.10";
+	var version = "0.2.11";
 	var description = "Entity Component System in JS";
 	var main = "lib/index.js";
 	var module = "src/index.js";
