@@ -1,6 +1,6 @@
 {
   "name": "test-ecsy-build",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Entity Component System in JS",
   "main": "lib/index.js",
   "module": "src/index.js",
