@@ -1,8 +1,8 @@
 # Generated files
 lib
 build
-site/README.md
 site/build/
+site/docs/README.md
 site/docs/api/
 site/benchmarks/benchmarks.module.js
  
